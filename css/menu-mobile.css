@@ -1,0 +1,148 @@
+@media (max-width:760px) {
+
+    .menu-nav{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr ;
+      grid-template-areas: "mobile logo logo"
+      "ul ul ul";
+      align-items: center;
+      margin: 0 0;
+    }
+
+    .menu-logo {
+      display: none;
+    }
+
+    .menu-logo-mobile {
+      display: block;
+      grid-area: logo;
+    }
+    .menu-logo-mobile {
+      grid-area: logo;
+  }
+    .menu-logo-mobile a {
+      font-size: 2.5em;
+      color: rgb(189, 124, 124);
+  }
+    .menu-mobile-button {
+      grid-area: mobile;
+      display: block;
+    }
+
+    .menu-nav ul {
+      grid-area: ul;
+      display: flex;
+      margin: 0 auto;
+      flex-wrap: nowrap;
+      border-top: 2px rgb(189, 124, 124) solid;
+      padding: 10px 0;
+    }
+  
+
+    /* teste */
+    [data-menu="button"] {
+      display: block;
+    }
+    .menu-mobile-button {
+      cursor: pointer;
+  }
+  
+    .bar1, .bar2, .bar3 {
+      display: block;
+      width: 35px;
+      height: 2px;
+      background-color: #FFF;
+      margin: 6px 0;
+      transition: 1s;
+    }
+    
+    .change .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate3d(-9px, 6px);
+    }
+    
+    .change .bar2 {opacity: 0;}
+    
+    .change .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate3d(-8px, -8px);
+    }
+  
+  
+    /* Funcao do botaop */
+    .menu-nav ul {
+      display: none;
+      animation: slideout 0.5s forwards;
+      
+    }
+    .menu-nav ul.ativo {
+      display: flex;
+      animation: slidein 0.5s forwards;
+      
+    }
+    .menu-nav > ul > li > a {
+      display: block;
+      padding: 5px 0;
+    }
+  
+    .menu-nav ul li {
+      padding: 0 15px;
+    }
+  
+  /* Animacao */
+  
+    @keyframes slidein {
+      from {
+        transform: translate3d(0, -200px, 0);
+        opacity: 0.5;
+        transition: 0.5s;
+      }
+  
+      to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+    }
+    @keyframes slideout {
+      from {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+  
+      to {
+        ttransform: translate3d(0, -200px, 0);
+        opacity: 0.5;
+        transition: 0.5s;
+      }
+    }
+  
+  }
+
+  @media (max-width:660px) { 
+    .menu-logo-mobile a {
+      font-size: 2.2em;
+      color: rgb(189, 124, 124);
+  }
+  p, h2 {
+    font-size: 1.4rem !important;
+  }
+  h1 {
+    font-size: 1.7rem !important;
+  }
+}
+
+@media (max-width:520px) { 
+  .menu-logo-mobile a {
+    font-size: 1.7em;
+    padding-bottom: 5px;
+    color: rgb(189, 124, 124);
+}
+p, h2 {
+  font-size: 1.2rem !important;
+}
+h1 {
+  font-size: 1.5rem !important;
+}
+
+}
+

@@ -1,0 +1,382 @@
+/* RESET */
+
+body, h1, h2, p, ul, li, a {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    color: #222222;
+}
+
+ul {
+    list-style:none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    background: black !important;
+}
+/* Grid TESTES */
+
+.grid-template {
+	grid-template:
+		"logo       nav     nav" 
+        "content    content     content" 
+        "beneficios beneficios  beneficios"
+        "arnold  participe   form  "
+		"footer     footer      footer" 
+		/ 1fr 1fr 1fr;
+}
+
+@media (max-width: 760px) {
+    .grid-template {
+	    grid-template:
+        "menu   menu"
+        "nav        nav" 
+        "content    content" 
+        "beneficios beneficios"
+        "participe   participe"
+        "arnold      arnold"
+        "form       form"
+		"footer     footer" 
+        / 1fr 1fr;
+    }
+}
+ h2 {
+     font-size: 1.2em;
+ }
+
+.grid {
+    display: grid;
+	max-width: 960px;
+    margin: 0 auto;
+}
+
+/* MENU */
+
+.menu {
+    align-items: center;
+    grid-template-columns: 1fr auto;
+}
+
+.menu-bg {
+    background: #30475e;
+}
+
+
+.menu-logo {
+    grid-area: logo;
+}
+.menu-logo a {
+    font-size: 3em;
+    color: rgb(189, 124, 124);
+}
+.menu-logo-mobile {
+    display: none;
+}
+
+.menu-nav {
+    grid-area: nav;
+    margin: 0 auto;
+    display: block;
+}
+
+.menu-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+}
+
+.menu-nav li {
+    padding: 10px;
+    margin-right: 10px;
+    background: #222831;
+    border-radius: 4px;
+}
+
+.menu-nav li a {
+    color: white;
+    font-size: 1.25em;
+}
+
+.menu-nav li a:hover {
+    color: #f05454;
+    font-size: 1.25em;
+}
+
+
+@media (max-width: 739px) {
+    .menu {
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+/* Projeto */
+
+.projeto {
+    grid-template-columns: 1fr 1fr;
+    padding-top:20px;
+    justify-content: start;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.projeto-info {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 300px;
+}
+
+.projeto-info h1 {
+    font-size: 2em;
+    color: #f05454;
+    text-transform:uppercase;
+}
+
+.projeto-info p {
+    padding-top: 20px;
+    font-size: 1.25em;
+    font-style: italic;
+}
+
+.projeto-info a {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: white;
+    padding: 15px 10px;
+    background:#30475e;
+    margin: 20px auto;
+    border-radius: 4px;
+}
+
+.projeto-video {
+    max-width: 100%;
+    height: 350px;
+    border: 3px solid #f05454;
+    min-width: 320px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 739px) {
+    .projeto {
+        grid-template-columns: 1fr;
+    }
+    .projeto-info h1, p {
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+
+/* INSPIRACOES */
+
+.inspiracoes {
+    border-top: 3px solid #f05454;
+}
+.inspiracoes h1 {
+    font-size: 2em;
+    color: #30475e;
+    padding: 20px 0;
+}
+
+.inspiracoes p {
+    font-size: 1.25em;
+    display: inline-block;
+    padding: 15px 0;
+    font-style: italic;
+    padding: 15px 0;
+    max-width: 600px;
+}
+
+.arnold  {
+    border-bottom: 3px solid #30475e;
+    padding: 10px 0;
+}
+
+.ronnie {
+    justify-self: end;
+    max-width: 100%;
+    padding: 10px 0;
+}
+
+.frank {
+    border-top: 3px solid #222831;;
+    border-bottom: 3px solid #f05454;
+    padding: 10px 0;
+}
+
+@media (max-width:739px) {
+    .inspiracoes-info h1{
+        text-align: center;
+    }
+}
+
+/* BENEFICIOS */
+
+
+.beneficios {
+    gap: 10px;
+    justify-items: center;
+}
+.beneficios-item {
+    padding-top: 20px;
+}
+
+.beneficios-item:nth-of-type(odd) h2::before  {
+    content: '';
+    height: 20px;
+    width: 5px;
+    background: #f05454;
+    margin-right: 2px;
+    display: inline-block;
+}
+.beneficios-item:nth-of-type(even) h2::before  {
+    content: '';
+    height: 20px;
+    width: 5px;
+    background: #30475e;
+    margin-right: 2px;
+    display: inline-block;
+}
+
+@media (max-width: 739px) {
+    .beneficios {
+        text-align: center;
+    }
+}
+/* PARTICIPE */
+
+.participe-bg {
+    background: #e8e8e8;
+}
+
+.participe {
+    align-items: center;
+    padding-top: 10px;
+    grid-template-columns: 1fr 2fr 2fr;
+}
+
+.participe img {
+    max-width: 100%;
+    grid-area: arnold;
+    margin-right: 10px;
+}
+
+.participe-info {
+    grid-area: participe;
+}
+
+.participe-info h1 {
+    font-size: 2em;
+}
+
+.participe-info p {
+    font-size: 1.25em;
+    font-style: italic;
+}
+
+.participe-form {
+    grid-area: form;
+}
+
+.participe-form input {
+    padding: 20px 0;
+    border: 3px solid #f05454;;
+}
+.participe-form button {
+    background: #f05454;
+    border: 2px solid #f05454;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Nunito';
+    font-weight: bold;
+    padding: 20px 15px;
+    margin-left: -5px;
+}
+
+.participe-form button:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 739px) {
+    .participe {
+        grid-template-columns: 1fr 1fr;
+    }
+    .participe-info h1, p {
+        text-align: center;
+    }
+    .participe img {
+        margin: 0 auto;
+        padding-top: 10px;
+        max-width: 250px;
+    }
+    .participe-form {
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+}
+
+/* Footer */
+
+.footer {
+    padding: 60px 0;
+    margin: 0 auto;
+    text-align: center;
+    background: #f05454;
+}
+
+.footer p {
+    font-size: 1.5em;
+    font-style: italic;
+    text-transform: uppercase;
+    color: white;
+}
+
+
+.active {
+    background: blue    !important; 
+}
+
+
+/* JS SCROLL */
+
+.js-scroll {
+    opacity: 0;
+    transform: translate3d(-30px, 0,0);
+    transition: 1s;
+}
+
+.js-scroll.ativo {
+    opacity: 1;
+    transform: translate3d(0, 0,0);
+    transition: 1s;
+}
+
+
+@keyframes show {
+    from {
+      opacity: 0;
+      transform: translate3d(-30px, 0 ,0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0 ,0);
+    }
+  }
+
+
